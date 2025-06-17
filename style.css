@@ -1,0 +1,273 @@
+/* === Modern CSS Reset === */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+:root {
+  --background: #efefef;
+  --surface: #ffffff;
+  --accent: #c8bcf6;
+  --text: #09090a;
+  --text-subtle: #1f1f22;
+  --placeholder-color: #2a2a2e;
+  --avatar-background: black;
+}
+
+[data-theme="dark"] {
+  --background: #09090a;
+  --surface: #09090a;
+  --accent: #c8bcf6;
+  --text: #efefef;
+  --text-subtle: #c0bfbd;
+  --placeholder-color: #efefef;
+  --avatar-background: black;
+}
+
+/* Usage example */
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: var(--surface);
+  width: 104px;
+  height: 100vh;
+  padding: 24px;
+  padding-bottom: 32px;
+  transition-property: width;
+  transition-duration: 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar:hover {
+  width: 266px;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.profile {
+  display: flex;
+}
+
+.profile__avatar {
+  height: 56px;
+  width: 56px;
+  border-radius: 16px;
+  color: var(--accent);
+  background-color: var(--avatar-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.profile__content {
+  padding-inline-start: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+.profile__name {
+  font-weight: bold;
+  font-size: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+.navbar:hover .profile__name {
+  opacity: 1;
+}
+
+.profile__email {
+  font-size: 0.875rem;
+  color: var(--text-subtle);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+.navbar:hover .profile__email {
+  opacity: 1;
+}
+
+.profile__avatar-icon {
+  font-size: 32px;
+}
+
+.search {
+  width: 56px;
+  height: 56px;
+  background-color: var(--background);
+  border-radius: 16px;
+  transition-property: width;
+  transition-duration: 0.5s;
+  position: relative;
+}
+
+.navbar:hover .search {
+  width: 218px;
+  height: 56px;
+}
+
+.search__input {
+  border: 0;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  padding-inline-start: 56px;
+}
+.search__input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.search__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-items {
+  /* margin-right: 16px; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  text-wrap: nowrap;
+
+  gap: 40px;
+  margin-inline-start: 16px;
+}
+
+.list-items__label {
+  padding-inline-start: 16px;
+
+  /* font-size: 18px; */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  margin-left: 10px;
+}
+.list-items__icon {
+  flex-shrink: 0;
+}
+.navbar:hover .list-items__label {
+  opacity: 1;
+}
+
+ul li {
+}
+
+.bottom {
+  margin-inline-start: 16px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  /* justify-content: space-around; */
+  text-wrap: nowrap;
+}
+
+.list-manu {
+  display: flex;
+  gap: 16px;
+}
+
+.list-manu__label {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+
+.list-manu__icon__logout,
+.list-manu__icon__light-mode {
+  flex-shrink: 0;
+}
+
+.navbar:hover .list-manu__label {
+  opacity: 1;
+}
+
+.logout {
+  /* padding-inline-start: 16px; */
+}
+
+.switch-toggle {
+  height: 56px;
+  display: flex;
+  gap: 16px;
+  /* width: 56px; */
+}
