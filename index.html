@@ -12,78 +12,87 @@
   </head>
 
   <body data-theme="light">
-    <!-- <i class="fas fa-camera"></i>
-    <i class="fa-solid fa-house-chimney"></i> -->
     <nav class="navbar">
       <div class="top">
         <div class="profile">
           <div class="profile__avatar">
-            <i class="fa-solid fa-otter profile__avatar-icon"></i>
+            <i class="fa-solid fa-fw fa-otter profile__avatar-icon"></i>
           </div>
 
           <div class="profile__content">
             <p class="profile__name">iva UI</p>
 
-            <p class="profile__email">ivagamilec@gmailjustify-content.com</p>
+            <p class="profile__email">ivagamilec@gmaiL.com</p>
           </div>
         </div>
 
         <div class="search">
           <input class="search__input" type="search" placeholder="Search..." />
           <div class="search__icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-fw fa-magnifying-glass"></i>
           </div>
         </div>
 
-        <ul class="list-items">
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-house-crack list-items__icon"></i
-              ><span class="list-items__label">Dashboard</span></a
+        <ul class="nav-list">
+          <li class="nav-list__item">
+            <a class="nav-list__item-link" href="">
+              <i
+                class="fa-solid fa-fw fa-house-crack nav-list__item-link-icon"
+              ></i>
+              <span class="nav-list__item-link-label">Dashboard</span></a
             >
           </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-chart-column list-items__icon"></i
-              ><span class="list-items__label">Revenue</span></a
+          <li class="nav-list__item">
+            <a class="nav-list__item-link" href="">
+              <i
+                class="fa-solid fa-fw fa-chart-column nav-list__item-link-icon"
+              ></i>
+              <span class="nav-list__item-link-label">Revenue</span></a
             >
           </li>
-          <li>
-            <a href="products.html"
-              ><i class="fa-solid fa-bell list-items__icon"></i
-              ><span class="list-items__label">Notification</span></a
+          <li class="nav-list__item">
+            <a class="nav-list__item-link" href="products.html">
+              <i class="fa-solid fa-fw fa-bell nav-list__item-link-icon"></i>
+              <span class="nav-list__item-link-label">Notification</span></a
             >
           </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-chart-pie list-items__icon"></i
-              ><span class="list-items__label">Analytics</span>
+          <li class="nav-list__item">
+            <a class="nav-list__item-link" href="">
+              <i
+                class="fa-solid fa-fw fa-chart-pie nav-list__item-link-icon"
+              ></i>
+              <span class="nav-list__item-link-label">Analytics</span>
             </a>
           </li>
-          <li>
-            <a href=""
-              ><i class="fa-solid fa-box list-items__icon"></i
-              ><span class="list-items__label">Inventory</span></a
+          <li class="nav-list__item">
+            <a class="nav-list__item-link" href="">
+              <i class="fa-solid fa-fw fa-box nav-list__item-link-icon"></i>
+              <span class="nav-list__item-link-label">Inventory</span></a
             >
           </li>
         </ul>
       </div>
       <div class="bottom">
-        <div class="list-manu">
-          <i class="fa-solid fa-right-from-bracket list-manu__icon__logout"></i
-          ><span class="list-manu__label">Logout</span>
-        </div>
-        <div class="switch-toggle">
-          <i class="fa-regular fa-sun list-manu__icon__light-mode"></i
-          ><span class="list-manu__label">Light-mode</span>
+        <ul class="nav-list">
+          <li class="nav-list__item">
+            <a class="nav-list__item-link" href="">
+              <i
+                class="fa-solid fa-fw fa-right-from-bracket nav-list__item-link-icon"
+              ></i>
+              <span class="nav-list__item-link-label">Logout</span>
+            </a>
+          </li>
+        </ul>
+        <div class="light-dark-control">
+          <i class="fa-regular fa-sun light-dark-control__icon"></i>
+          <span class="light-dark-control__label">Light mode</span>
+          <label class="light-dark-control__action switch">
+            <input class="switch__input" type="checkbox" />
+            <span class="switch-toggle"></span>
+            <i class="fa-solid fa-fw fa-sun switch__icon"></i>
+          </label>
         </div>
       </div>
     </nav>
-
-    <!-- <header>
-        <h1>
-            naslov
-        </h1>
-    </header> -->
   </body>
 </html>
