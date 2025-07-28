@@ -322,12 +322,13 @@ body {
   border-radius: 16px;
 }
 
-.switch-toggle {
+.switch__toggle {
   height: 28px;
   width: 28px;
   background-color: var(--text);
   border-radius: 50%;
   margin: 2px;
+  transition: transform 500ms;
 }
 
 .switch__icon {
@@ -343,5 +344,18 @@ body {
   line-height: 1;
 }
 
-.navbar:hover {
+.switch__input:checked + .switch__toggle {
+  transform: translateX(24px);
+}
+.switch__icon--light {
+  display: none;
+}
+.switch__icon--dark {
+  display: flex;
+}
+.switch__input:checked + .switch__toggle .switch__icon--light {
+  display: flex;
+}
+.switch__input:checked + .switch__toggle .switch__icon--dark {
+  display: none;
 }
