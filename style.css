@@ -364,3 +364,9 @@ body {
     }
   }
 }
+
+/* [data-theme="dark"] {
+  .switch {
+    background-color: var(--surface);
+  }
+} */
