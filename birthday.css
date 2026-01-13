@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.postcard-container {
+    perspective: 1000px;
+}
+
+.postcard {
+    width: 500px;
+    height: 700px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border-radius: 20px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s ease;
+    cursor: pointer;
+}
+
+.postcard:hover {
+    transform: rotateY(5deg) rotateX(5deg) scale(1.05);
+}
+
+.confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0;
+    animation: confetti-fall 3s ease-in-out;
+}
+
+@keyframes confetti-fall {
+    0% {
+        opacity: 1;
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(800px) rotate(720deg);
+    }
+}
+
+.postcard-content {
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.birthday-title {
+    font-size: 3.5rem;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease-in-out infinite;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.name-container {
+    margin: 20px 0;
+}
+
+.birthday-name {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.birthday-name::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.postcard:hover .birthday-name::after {
+    width: 100%;
+}
+
+.cake-container {
+    margin: 30px 0;
+    transition: transform 0.3s ease;
+}
+
+.postcard:hover .cake-container {
+    transform: scale(1.1) rotate(2deg);
+}
+
+.cake {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.cake-layer {
+    border-radius: 50px;
+    position: relative;
+    margin: -5px 0;
+}
+
+.cake-bottom {
+    width: 140px;
+    height: 40px;
+    background: linear-gradient(145deg, #8b4513, #a0522d);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cake-middle {
+    width: 120px;
+    height: 35px;
+    background: linear-gradient(145deg, #dda0dd, #ba55d3);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cake-top {
+    width: 100px;
+    height: 30px;
+    background: linear-gradient(145deg, #ffb6c1, #ff69b4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.candles {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.candle {
+    width: 6px;
+    height: 25px;
+    background: linear-gradient(to bottom, #ffd700, #ffed4e);
+    border-radius: 3px;
+    position: relative;
+    animation: candle-flicker 2s ease-in-out infinite;
+}
+
+.flame {
+    width: 8px;
+    height: 12px;
+    background: radial-gradient(circle, #ff4500, #ffa500, #ffff00);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flame-dance 1s ease-in-out infinite alternate;
+}
+
+@keyframes candle-flicker {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(1deg); }
+    75% { transform: rotate(-1deg); }
+}
+
+@keyframes flame-dance {
+    0% { transform: translateX(-50%) scale(1) rotate(-2deg); }
+    100% { transform: translateX(-50%) scale(1.1) rotate(2deg); }
+}
+
+.birthday-message {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    line-height: 1.6;
+    margin: 20px 0;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.postcard:hover .birthday-message {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.decorative-elements {
+    display: flex;
+    gap: 20px;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.decorative-elements span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+.decorative-elements span:nth-child(1) { animation-delay: 0s; }
+.decorative-elements span:nth-child(2) { animation-delay: 0.5s; }
+.decorative-elements span:nth-child(3) { animation-delay: 1s; }
+.decorative-elements span:nth-child(4) { animation-delay: 1.5s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.postcard:hover .decorative-elements span {
+    transform: scale(1.2) rotate(15deg);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .postcard {
+        width: 90vw;
+        height: 90vh;
+        margin: 20px;
+    }
+    
+    .birthday-title {
+        font-size: 2.5rem;
+    }
+    
+    .birthday-name {
+        font-size: 2rem;
+    }
+    
+    .postcard-content {
+        padding: 20px;
+    }
+}
+
+/* Additional hover effects */
+.postcard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(255, 107, 107, 0.1), 
+        rgba(78, 205, 196, 0.1), 
+        rgba(69, 183, 209, 0.1), 
+        rgba(150, 206, 180, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.postcard:hover::before {
+    opacity: 1;
+}
